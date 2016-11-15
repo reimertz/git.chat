@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<style>
+
+html, body {
+  display: flex; flex-direction: column; align-items: center;
+  font-family: Menlo !important;
+  font-size: 16px; color: white;
+  position: relative;
+  z-index: 0;
+}
+
+a {
+  color: white;
+}
+
+a:visited {
+  color: inherit;
+}
+
+h1 {
+  font-size: calc(3.5vw + 5px);
+  font-weight: 200;
+  text-align: center;
+}
+
+pre {
+  font-size: calc(0.5vw + 10px);
+  text-align: left;
+  white-space: pre-wrap;
+  line-height: calc(1.5vw + 10px);
+  position: relative;
+  font-family: Menlo;
+}
+
+code {
+  font-size: calc(0.25vw + 10px);
+}
+
+u {
+  background: white;
+  color: #EE4454;
+  text-decoration: none;
+  padding: 0 2vw;
+  position: relative;
+
+}
+
+u:after {
+  background: white;
+  opacity: 0.5;
+  top: 10px;
+  left: 10px;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+ul, li {
+ line-height: calc(0.25vw + 10px);
+}
+
+#left, #right {
+  -webkit-animation: animation 1800ms linear infinite both;
+  animation: animation 1800ms linear infinite both;
+  animation-iteration-count: 1;
+}
+
+body {
+  background-color: black;
+  animation-name: background;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  transform-origin: center;
+  transition-timing-function: ease-out;
+  text-align: center;
+  margin: 0 auto;
+}
+
+body > * {
+  min-width: 300px;
+  width: 60vw;
+  max-width: 750vw;
+}
+
+@keyframes background {
+  0% {
+    background-color: black;
+  }
+
+  100% {
+    background-color: #EE4454;
+  }
+}
+
+#shadow, #circle {
+  display: none;
+}
+
+#eyes {
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  transform-origin: center;
+  animation-fill-mode: both;
+  transform: scale(1, 1);
+}
+
+#head, #mask {
+  fill: black;
+}
+
+#head, #talky {
+  fill: black;
+  animation-name: headAnimation;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  transform-origin: center;
+  transition-timing-function: ease-out;
+}
+
+@keyframes headAnimation {
+  0% {
+    fill: black;
+  }
+
+  100% {
+    fill: white;
+  }
+}
+
+#mask {
+  fill: black;
+  animation-name: maskAnimation;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  transform-origin: center;
+  transition-timing-function: ease-out;
+}
+
+@keyframes maskAnimation {
+  0% {
+    fill: black;
+  }
+
+  100% {
+    fill: #EE4454;
+  }
+}
+
+pre {
+  opacity: 0;
+  animation-name: textAnimation;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  transform-origin: center;
+  transition-timing-function: ease-out;
+}
+
+@keyframes textAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% { transform: scale(1, 1); }
+  5% { transform: scale(1, 0); }
+  10% { transform: scale(1, 1); }
+
+  24% { transform: scale(1, 1); }
+  25% { transform: scale(1, 0); }
+  27% { transform: scale(1, 1); }
+
+  29% { transform: scale(1, 1); }
+  30% { transform: scale(1, 0); }
+  33% { transform: scale(1, 1); }
+
+  40% { transform: scale(1, 1); }
+  43% { transform: scale(1, 0); }
+
+  86% { transform: scale(1, 0); }
+  90% { transform: scale(1, 1); }
+}
+
+svg {
+  width: calc(10vw + 100px);
+}
+
+</style>
+<figure>
+<svg viewBox="-208 -368 342 342" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path id="talky" d="M-143.736471,-154.800764 L-148.488525,-93.8978282 L-102.415392,-119.880849 C-121.719019,-126.73896 -135.362286,-138.041507 -143.736471,-154.800764 Z" stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path>
+  <path id="head" d="M-36.6969291,-110.432416 C38.9495106,-109.505983 76.0548565,-131.17943 80.9654595,-191.871348 C83.7647516,-226.468811 70.9837742,-245.272504 63.911536,-253.118632 C71.9609697,-289.725382 60.6801986,-302.055563 60.6801986,-302.055563 C60.6801986,-302.055563 37.2284352,-303.902463 10.3046375,-282.545398 C2.07088202,-286.344896 -36.6969291,-287.56107 -36.6969291,-287.56107 C-36.6969291,-287.56107 -75.4647402,-286.344896 -83.6984957,-282.545398 C-110.622293,-303.902463 -134.074057,-302.055563 -134.074057,-302.055563 C-134.074057,-302.055563 -145.354828,-289.725382 -137.305394,-253.118632 C-144.377632,-245.272504 -157.15861,-226.468811 -154.359318,-191.871348 C-149.448715,-131.17943 -112.343369,-109.505983 -36.6969291,-110.432416" stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path>
+  <path id="mask" d="M-36.6969291,-125.459814 C-7.37925163,-126.168315 21.8728517,-126.867494 34.1255785,-134.775988 C46.3783052,-142.684481 52.3030709,-157.567675 52.3030709,-174.837401 C52.3030709,-192.107127 43.9653602,-207.092868 27.455409,-212.38955 C10.9454579,-217.686232 -4.59341101,-211.64064 -36.6969291,-212.38955 C-68.8004472,-211.64064 -84.3393161,-217.686232 -100.849267,-212.38955 C-117.359218,-207.092868 -125.696929,-192.107127 -125.696929,-174.837401 C-125.696929,-157.567675 -119.772163,-142.684481 -107.519437,-134.775988 C-95.2667099,-126.867494 -66.0146066,-126.168315 -36.6969291,-125.459814" stroke="none" fill="#EE4454" fill-rule="evenodd"></path>
+  <g id="eyes">
+    <ellipse id="left" stroke="none" fill="#FFFFFF" fill-rule="evenodd" cx="-82.8449434" cy="-173.251898" rx="17.5" ry="25.9979981"></ellipse>
+    <ellipse id="right" stroke="none" fill="#FFFFFF" fill-rule="evenodd" cx="0" cy="-173.251898" rx="17.5" ry="25.9979981"></ellipse>
+  </g>
+</svg>
+</figure>
+<pre>
+<u>Hi there, have you heard about <a href="https://gitter.im" target="_blank">gitter.im</a>?</u>
+
+it's a very neat tool, the problem is that all messaging history, mainly about open-sourced projects, are stored in a closed-sourced environment.
+
+<u>I think this is a problem.</u>
+
+So I have an idea, what if we could create an open-sourced alternative, store all these conversations using <a href="https://git-scm.com/docs/git-notes">git notes</a> and then surface them with a simple, yet modular UI?
+
+There is a lot of things that needs to be done, all of them to be honest. :)
+
+<u>How I envision it to work.</u>
+
+First, prepare repo:
+  <b>1.</b> create an orphan branch for git notes
+  <b>2.</b> auth repo with a git.chat
+  <b>3.</b> git.chat will commit comments to repo
+
+Then, client-side:
+  <b>1.</b> visit git.chat/<i>organization</i>/<i>project</i>
+  <b>2.</b> auth (preferably with github)
+  <b>3.</b> poll changes from repo every n seconds
+  <b>4.</b> comments get committed by git.chat
+
+
+
+<u>So I will need your help.</u>
+
+please head over to <a href="http://github.com/reimertz/git.chat">github.com/reimertz/git.chat</a> and start a discussion.
+
+</pre>
+</body>
+</html>
